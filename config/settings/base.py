@@ -28,9 +28,13 @@ INSTALLED_APPS = [
     'allauth.account',
     
     'public',
+    
     'dashboard',
     'reports',
+    
+    'clients',
     'deliveries',
+    'parcels',
 ]
 
 MIDDLEWARE = [

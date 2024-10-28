@@ -8,5 +8,5 @@ from .views import (
 
 app_name = 'clients'
 urlpatterns = [
-    path('/', index, name="index")
+    path('', index, name="index")
 ]
