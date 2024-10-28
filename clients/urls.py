@@ -3,10 +3,12 @@ from django.urls import (
 )
 
 from .views import (
-    index
+    index,
+    add_client
 )
 
 app_name = 'clients'
 urlpatterns = [
-    path('', index, name="index")
+    path('', index, name="index"),
+    path('add_client', add_client, name="add_client")
 ]

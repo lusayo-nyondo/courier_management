@@ -1,3 +1,25 @@
 {% extends 'clients/_base.html' %}
 
-{% block module_title %}Clients{% endblock %}
+{% block module_content %}
+    <div class="w-full h-full flex flex-col justify-center items-center">
+        {% for client in clients %}
+            <div>
+                <p>here's your client list.</p>
+            </div>
+        {% empty %}
+            <h2 class="text-xl">
+                No clients found.
+            </h2>
+            <div class="flex flex-row">
+                <a
+                    href="{% url 'clients:add_client' %}"
+                    class="flex flex-row justify-center items-center gap-2
+                        p-2 rounded
+                        bg-primary-700 hover:bg-primary-800 text-white">
+                    {% include 'icons/plus_circle.svg' %}
+                    <span>Add client</span>
+                </a>
+            </div>
+        {% endfor %}
+    </div>
+{% endblock %}

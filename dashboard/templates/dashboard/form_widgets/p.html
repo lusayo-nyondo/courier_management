@@ -1,0 +1,11 @@
+{% for field in form %}
+    <p class="w-full">
+        <label
+            for="{{ field.id_for_label }}"
+            class="block mb-1 w-full text-sm text-primary-500 font-bold dark:text-white">{{ field.label }}</label>
+        {{ field }}
+        {% if field.help_text %}
+            <small class="form-text text-muted">{{ field.help_text }}</small>
+        {% endif %}
+    </p>
+{% endfor %}
