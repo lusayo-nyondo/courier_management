@@ -18,10 +18,13 @@ def is_current_page_child_of(
     
     if is_view:
         parent_url = reverse(parent_url)
-    else:
-        if parent_url.endswith('/'):
-            parent_url = parent_url[:-1]
-            
+    
+    if parent_url.endswith('/'):
+        parent_url = parent_url[:-1]
+    
+    if current_path.endswith('/'):
+        current_path = current_path[:-1]
+       
     parent_url_slices = parent_url.split('/')
     current_path_slices = current_path.split('/')
     
