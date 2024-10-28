@@ -4,11 +4,9 @@ from django.urls import (
 
 from .views import (
     index,
-    lots
 )
 
-app_name = 'carparking'
+app_name = 'deliveries'
 urlpatterns = [
     path('', index, name="index"),
-    path('lots', lots, name='lots'),
 ]
