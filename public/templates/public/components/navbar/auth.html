@@ -1,0 +1,18 @@
+<div class="relative z-10 inline-flex items-center space-x-3 md:ml-5 lg:justify-end">
+    {% if request.user.is_authenticated %}
+    <span class="inline-flex rounded-md shadow-sm">
+        <a href="{% url 'dashboard:index' %}" class="inline-flex items-center justify-center px-4 py-2 text-base font-medium leading-6 text-white whitespace-no-wrap bg-primary-600 border border-primary-700 rounded-md shadow-sm hover:bg-primary-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary-500" data-rounded="rounded-md" data-primary="primary-600">
+            <span>Go to App</span>
+        </a>
+    </span>
+    {% else %}
+    <a href="/accounts/login" class="inline-flex items-center justify-center px-4 py-2 text-base font-medium leading-6 text-gray-600 whitespace-no-wrap bg-white border border-gray-200 rounded-md shadow-sm hover:bg-gray-50 focus:outline-none focus:shadow-none" data-rounded="rounded-md">
+        <span>Sign in</span>
+    </a>
+    <span class="inline-flex rounded-md shadow-sm">
+        <a href="/accounts/signup" class="inline-flex items-center justify-center px-4 py-2 text-base font-medium leading-6 text-white whitespace-no-wrap bg-primary-600 border border-primary-700 rounded-md shadow-sm hover:bg-primary-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary-500" data-rounded="rounded-md" data-primary="primary-600">
+            <span>Sign up</span>
+        </a>
+    </span>
+    {% endif %}
+</div>

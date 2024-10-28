@@ -1,0 +1,46 @@
+{% load static %}
+{% load dashboard %}
+
+{% is_current_page_child_of parent_url='/accounts/' is_view=False as is_child_page %}
+
+<li
+    x-data="{
+        isPopupMenuOpen: false
+    }"
+    class="w-full block pb-2 px-2 relative flex flex-col gap-2">
+    <div class="relative">
+        <ul
+            :class="{
+                'block': isPopupMenuOpen,
+                'hidden': !isPopupMenuOpen
+            }"
+            class="absolute bottom-0 -transform-top-[100px] z-999
+                bg-primary-800 rounded p-2
+                w-full
+                flex flex-col gap-2">
+            {% include './popover_menu_link.html' with text="Change Password" url="/accounts/password/set" icon='icons/password.svg' %}
+            {% include './popover_menu_link.html' with text="Change Email Settings" url="/accounts/email" icon='icons/@email.svg' %}
+            {% include './popover_menu_link.html' with text="Signout" url="/accounts/logout" icon='icons/logout.svg' %}
+        </ul>
+    </div>
+    <button
+        type="button"
+        class="block w-full rounded p-2
+        flex flex-row items-center justify-start gap-2
+        transition duration-150 ease-out
+        font-medium leading-6
+        text-white hover:bg-primary-700"
+        @click="isPopupMenuOpen = !isPopupMenuOpen"
+        {% if is_child_page %}
+        :class="'bg-primary-800'"
+        {% else %}
+        :class="{
+            'bg-primary-800': isPopupMenuOpen
+        }"
+        {% endif %}>
+        <div class="object-scale-down">
+            {% include 'icons/avatar.svg' %}
+        </div>
+        <span>Account</span>
+    </button>
+</li>

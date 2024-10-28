@@ -1,0 +1,11 @@
+# Javascript
+node_modules
+static/CACHE
+
+# Python
+venv
+__pycache__
+
+public_static
+
+db.sqlite3

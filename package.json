@@ -1,0 +1,14 @@
+{
+  "name": "parking_management",
+  "version": "1.0.0",
+  "description": "Tailwind Build Process for project.",
+  "main": "index.js",
+  "scripts": {
+    "dev": "tailwindcss -i ./static/src/input.css -o ./static/src/output.css --watch"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "tailwindcss": "^3.4.14"
+  }
+}

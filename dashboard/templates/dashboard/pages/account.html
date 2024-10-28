@@ -1,0 +1,20 @@
+{% extends 'dashboard/_base.html' %}
+
+{% block content %}
+    <div class="w-full h-full p-2">
+        <header
+            class="w-full flex flex-col items-center">
+            <div class="w-24 h-24 rounded-full
+                text-center
+                bg-primary-500 hover:bg-primary-600 cursor-pointer">
+            </div>
+            <h2
+                class="text-xl">
+                {{ user.username }}
+            </h2>
+        </header>
+        <section class="w-[90%] max-w-[600px] p-2 mx-auto flex flex-col gap-2">
+            {% include 'dashboard/pages/account/link.html' with text="Change Password" url="/accounts/password/set" %}
+        </section>
+    </div>
+{% endblock %}
