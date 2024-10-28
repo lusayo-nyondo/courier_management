@@ -2,4 +2,11 @@ from django.urls import (
     path
 )
 
-app_name = 'deliveries'
+from .views import (
+    index
+)
+
+app_name = 'clients'
+urlpatterns = [
+    path('/', index, name="index")
+]
