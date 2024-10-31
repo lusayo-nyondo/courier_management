@@ -5,6 +5,7 @@ static/CACHE
 # Python
 venv
 __pycache__
+migrations
 
 public_static
 

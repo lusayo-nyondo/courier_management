@@ -130,3 +130,5 @@ AUTHENTICATION_BACKENDS = [
 
 LOGIN_URL = '/accounts/login/'
 LOGIN_REDIRECT_URL = '/dashboard'
+
+FORM_RENDERER = 'config.forms.FormRenderer'

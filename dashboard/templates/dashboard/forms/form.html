@@ -1,0 +1,20 @@
+{{ errors }}
+{% for field, error in fields %}
+    {% if field.type == 'checkbox' or field.type == 'radiobox' %}
+    <label
+        for="{{ field.name }}"
+        class="w-full block flex gap-2 justify-start items-start">
+        <span class="block w-full">{{ field }}</span>
+        <span
+            class="block w-full text-sm text-primary-500 font-bold">{{ field.label_tag }}</span>
+    </label>
+    {% else %}
+    <label
+        for="{{ field.name }}"
+        class="w-full block">
+        <span
+            class="block w-full text-sm text-primary-500 font-bold">{{ field.label_tag }}</span>
+        <span class="block w-full">{{ field }}</span>
+    </label>
+    {% endif %}
+{% endfor %}

@@ -1,0 +1,9 @@
+{% if attrs.type == "checkbox" or attrs.type == "radio" %}
+<input class="">
+{% elif attrs.type == "textarea" %}
+<textarea class="border border-gray-300 bg-primary-500 rounded"></textarea>
+{% elif attrs.type == "hidden" %}
+<input class="">
+{% else %}
+<input class="border border-gray-300 rounded border-gray-300 bg-primary-500">
+{% endif %}

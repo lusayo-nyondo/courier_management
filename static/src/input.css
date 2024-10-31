@@ -15,3 +15,11 @@
 body {
     font-family: 'Nunito Variable';
 }
+
+.errorlist {
+    @apply rounded border border-red-300 bg-red-100 p-2 text-center;
+}
+
+.errorlist li {
+    @apply text-red-500;
+}

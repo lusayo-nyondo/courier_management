@@ -3,10 +3,12 @@ from django.urls import (
 )
 
 from .views import (
-    index
+    index,
+    add_parcel
 )
 
 app_name = 'parcels'
 urlpatterns = [
-    path('', index, name='index')
+    path('', index, name='index'),
+    path('add_parcel', add_parcel, name='add_parcel')
 ]
