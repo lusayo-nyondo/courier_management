@@ -4,7 +4,7 @@
   "description": "Tailwind Build Process for project.",
   "main": "index.js",
   "scripts": {
-    "dev": "tailwindcss -i ./static/src/input.css -o ./static/src/output.css --watch"
+    "dev": "tailwindcss -i ./static/css/input.css -o ./static/css/output.css --watch"
   },
   "author": "",
   "license": "ISC",
