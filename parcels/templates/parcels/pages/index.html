@@ -1,3 +1,10 @@
 {% extends 'parcels/_base.html' %}
 
-{% block module_title %}Parcels{% endblock %}
+{% block module_content %}
+<div class="w-full h-full">
+    <p class="w-full p-2">Attempting to render formset.</p>
+    <div class="w-full p-2">
+        {{ formset }}
+    </div>
+</div>
+{% endblock %}

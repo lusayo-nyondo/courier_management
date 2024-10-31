@@ -1,11 +1,16 @@
 from django.shortcuts import render
 
 from .forms import (
-    ParcelForm
+    ParcelForm,
+    ParcelFormSet
 )
 
 def index(request):
-    context = {}
+    formset = ParcelFormSet()
+    
+    context = {
+        formset: formset
+    }
     
     return render(
         request,
