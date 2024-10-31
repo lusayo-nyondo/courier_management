@@ -15,7 +15,7 @@ from .forms import (
     ClientForm
 )
 
-def index(request):
+def client_list(request):
     clients = Client.objects.all()
     
     context = {
@@ -24,11 +24,11 @@ def index(request):
     
     return render(
         request,
-        'clients/pages/index.html',
+        'clients/pages/client_list.html',
         context
     )
 
-def add_client(request):
+def new_client(request):
     if request.method == 'GET':
         client = ClientForm()
     elif request.method == "POST":
@@ -51,25 +51,38 @@ def add_client(request):
     
     return render(
         request,
-        'clients/pages/add_client.html',
+        'clients/pages/new_client.html',
         context
     )
     
-def view_client(request, client_id):
+def client_detail(request, client_id):
     client = Client.objects.get(
         id=client_id
     )
+    
+    context = {
+        'client': client
+    }
+    
+    return render(
+        request,
+        'clients/pages/client_detail.html',
+        context
+    )
+
+def client_edit(request, client_id):
+    client = Client.objects.get(id=client_id)
     
     client_form = ClientForm(
         instance=client
     )
     
     context = {
-        'client': client_form
+        'form': client_form,
     }
     
     return render(
         request,
-        'clients/pages/single_client.html',
+        'clients/pages/client_edit.html',
         context
     )

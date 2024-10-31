@@ -21,10 +21,12 @@ class Delivery(models.Model):
     sender: models.ForeignKey = models.ForeignKey(
         Client,
         on_delete=models.DO_NOTHING,
+        related_name='sent_delivieries'
     )
     receiver: models.ForeignKey = models.ForeignKey(
         Client,
-        on_delete=models.DO_NOTHING
+        on_delete=models.DO_NOTHING,
+        related_name='received_deliveries'
     )
     parcel: models.ForeignKey = models.ForeignKey(
         Parcel,

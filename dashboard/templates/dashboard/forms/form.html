@@ -8,6 +8,13 @@
         <span
             class="block w-full text-sm text-primary-500 font-bold">{{ field.label_tag }}</span>
     </label>
+    {% elif field.type == 'hidden' %}
+    <label
+        aria-show="false"
+        for="{{ field.name }}"
+        class="w-full block">
+        <input type="hidden">
+    </label>
     {% else %}
     <label
         for="{{ field.name }}"

@@ -3,14 +3,16 @@ from django.urls import (
 )
 
 from .views import (
-    index,
-    add_client,
-    view_client
+    client_list,
+    client_detail,
+    client_edit,
+    new_client
 )
 
 app_name = 'clients'
 urlpatterns = [
-    path('', index, name="index"),
-    path('add_client', add_client, name="add_client"),
-    path('view_client/<int:client_id>', view_client, name='view_client'),
+    path('', client_list, name="index"),
+    path('new', new_client, name="new_client"),
+    path('<int:client_id>/detail', client_detail, name='client_detail'),
+    path('<int:client_id>/edit', client_edit, name='client_edit')
 ]

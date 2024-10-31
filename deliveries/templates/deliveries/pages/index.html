@@ -1,3 +1,21 @@
 {% extends 'deliveries/_base.html' %}
 
-{% block module_title %}Deliveries{% endblock %}
+{% block module_content %}
+    {% for object in object_list %}
+    <div class="p-4 bg-primary-100 border-gray-100 rounded">{{ object }}</div>
+    {% empty %}
+    <h2 class="text-xl">
+        <span>No deliveries found.</span>
+    </h2>
+    <div class="flex flex-row">
+        <a
+            href="{% url 'deliveries:new' %}"
+            class="flex flex-row justify-center items-center gap-2
+                p-2 rounded
+                bg-primary-700 hover:bg-primary-800 text-white">
+            {% include 'icons/plus_circle.svg' %}
+            <span>Add Delivery</span>
+        </a>
+    </div>
+    {% endfor %}
+{% endblock %}

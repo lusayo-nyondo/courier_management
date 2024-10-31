@@ -10,7 +10,7 @@
                 </h2>
                 <div class="flex flex-row justify-end">
                     <a
-                        href="{% url 'clients:add_client' %}"
+                        href="{% url 'clients:new_client' %}"
                         class="flex flex-row justify-center items-center gap-2
                             p-2 rounded
                             bg-primary-700 hover:bg-primary-800 text-white">
@@ -21,7 +21,7 @@
             </header>
             {% endifchanged %}
             <a
-                href="{% url 'clients:view_client' client.id %}"
+                href="{% url 'clients:client_detail' client.id %}"
                 class="w-full flex flex-col justify-start p-4
                 rounded
                 cursor-pointer hover:bg-primary-300 transition duration-300ms ease-in-out
@@ -34,7 +34,7 @@
             </h2>
             <div class="flex flex-row">
                 <a
-                    href="{% url 'clients:add_client' %}"
+                    href="{% url 'clients:new_client' %}"
                     class="flex flex-row justify-center items-center gap-2
                         p-2 rounded
                         bg-primary-700 hover:bg-primary-800 text-white">

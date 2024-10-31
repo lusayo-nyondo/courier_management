@@ -5,11 +5,11 @@
         x-data="{
             isSidebarOpen: false
         }"
-        class="w-full h-full overflow-hidden grid grid-cols-12 relative">
+        class="w-full h-full overflow-hidden grid grid-cols-12 flex flex-col md:flex-row relative">
         <header
-            class="flex justify-end max-h-[80px] col-span-12 w-full bg-primary-500
+            class="flex justify-end h-[80px] col-span-12 w-full bg-primary-500
             md:hidden p-4">
-            <button class="p-2 text-white" @click="isSidebarOpen = !isSidebarOpen">
+            <button type="button" class="p-2 text-white" @click="isSidebarOpen = !isSidebarOpen">
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
                     <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
                 </svg>
@@ -17,15 +17,15 @@
         </header>
         <div
             :class="{
-                'w-0 md:w-full': !isSidebarOpen,
-                'w-full': isSidebarOpen
+                'w-0 h-0 md:w-full md:h-full': !isSidebarOpen,
+                'w-full h-full': isSidebarOpen
             }"
             class="absolute col-span-12 h-full w-full overflow-hidden
             md:col-span-3 md:block md:relative
-            transition duration-300s ease-in-out">
+            transition duration-300s ease-in-out bg-indigo-600">
             {% include 'dashboard/components/sidebar.html' %}
         </div>
-        <div class="col-span-12 md:col-span-9 h-full overflow-hidden p-4">
+        <div class="col-span-12 md:col-span-9 flex-1 h-full overflow-hidden p-4">
             {% block content %}
             <div
                 class="border border-2 border-dotted rounded
